@@ -14,12 +14,10 @@ def hello():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    # Use the column names from your original training data
     column_names = ["Id", "Sepal Length (cm)", "Sepal Width (cm)", "Petal Length (cm)", "Petal Width (cm)"]  
     
     data = request.get_json()
 
-    # Create a list of values using the order of columns in the training data
     data_vector = [
         data.get("Id"),
         data.get("Sepal Length (cm)"),
